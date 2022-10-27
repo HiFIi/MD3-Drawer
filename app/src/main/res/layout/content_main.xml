@@ -38,7 +38,7 @@
         android:layout_margin="40dp"
         android:layout_marginBottom="100dp"
         android:id="@+id/textView"
-        android:text="Get temperature here"
+        android:text=""
         android:textColor="#F6F8F5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
