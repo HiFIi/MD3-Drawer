@@ -20,25 +20,25 @@
         app:navGraph="@navigation/mobile_navigation"/>
     
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_centerInParent="true"
+        android:background="@drawable/navigation_empty_icon"
         android:id="@+id/btVar1"
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:background="@drawable/navigation_empty_icon" />
-
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:padding="16dp"
+        android:text=""
+        android:textSize="20dp"/>
+    
+    <TextView
         android:fontFamily="sans-serif-black"
+        android:id="@+id/isItAvailable"
+        android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:layout_marginBottom="100dp"
-        android:id="@+id/isItAvailable"
+        android:layout_width="wrap_content"
         android:text=""
-        android:textColor="#F6F8F5"/>
+        android:textColor="#F6F8F5"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
