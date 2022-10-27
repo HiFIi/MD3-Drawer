@@ -22,7 +22,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Weather"
+        android:text=""
         android:layout_centerInParent="true"
         android:id="@+id/btVar1"
         android:textSize="20dp"

@@ -7,27 +7,27 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     tools:context=".MainActivity">
-    
+
     <com.google.android.material.appbar.AppBarLayout
         android:fitsSystemWindows="false"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:theme="@style/Theme.Drawertest.AppBarOverlay">
-        
+
         <androidx.appcompat.widget.Toolbar
             android:fitsSystemWindows="false"
             android:id="@+id/toolbar"
             android:layout_height="?attr/actionBarSize"
             android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            app:popupTheme="@style/Theme.Drawertest.PopupOverlay"/>
-        
-    
+            app:popupTheme="@style/Theme.Drawertest.PopupOverlay" />
+
+
     </com.google.android.material.appbar.AppBarLayout>
-    
+
     <include
-        layout="@layout/content_main"/>
-    
+        layout="@layout/content_main" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_gravity="bottom|end"
@@ -35,7 +35,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_width="wrap_content"
-        app:srcCompat="@android:drawable/ic_dialog_email"/>
-    
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
