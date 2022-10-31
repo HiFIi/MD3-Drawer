@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Drawertest" parent="Theme.Material3.DynamicColors.DayNight">
+    <style
+            name="Theme.Drawertest"
+            parent="Theme.Material3.DynamicColors.DayNight">
         <!-- Primary brand color. -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textAllCaps">false</item>
@@ -10,16 +12,14 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:fitsSystemWindows">false</item>
-        // make status bar icons colour grey
         <item name="android:windowLightStatusBar">true</item>
-        // override the notch area
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        // make navigation are transparent
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
-    
-    
-    <style name="Widget.Design.NavigationView"
+
+
+    <style
+            name="Widget.Design.NavigationView"
         parent="Widget.Design.ScrimInsetsFrameLayout">
         <item name="elevation">@dimen/design_navigation_elevation</item>
         <item name="itemIconPadding">@dimen/design_navigation_item_icon_padding</item>
