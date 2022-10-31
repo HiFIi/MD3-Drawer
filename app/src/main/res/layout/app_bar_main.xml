@@ -8,19 +8,24 @@
     android:layout_width="match_parent"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:background="@drawable/hometest"
-        android:id="@+id/te"
-        android:layout_height="220dp"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:scaleType="centerInside" />
+        android:layout_height="240.0dip"
+        android:background="@android:color/white">
+        <ImageView
+            android:background="@drawable/hometest"
+            android:id="@+id/te"
+            android:layout_height="240dp"
+            android:layout_width="fill_parent"
+            android:scaleType="centerInside" />
+    </RelativeLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:fitsSystemWindows="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginTop="24.0dip"
+        android:elevation="16dp"
         android:background="#00000000"
         android:theme="@style/Theme.Drawertest.AppBarOverlay">
 
