@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
     
@@ -33,7 +34,6 @@
         android:fontFamily="sans-serif-black"
         android:id="@+id/isItAvailable"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
         android:layout_marginBottom="100dp"
         android:layout_width="wrap_content"
         android:text=""

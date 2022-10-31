@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
-    android:layout_height="100dp"
+    android:layout_height="150dp"
     android:layout_width="match_parent"
     android:orientation="vertical">
 
@@ -21,7 +21,7 @@
             android:paddingTop="24.0dip"
             android:textColor="#85fafafa"
             android:textSize="26.0sp"
-            app:fontName="Google_Sans_Display-700-100_0-0_0.ttf" />
+            app:fontName="lyftproui_bold.otf" />
 
     </RelativeLayout>
 
