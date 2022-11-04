@@ -7,9 +7,35 @@
     android:fitsSystemWindows="false"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="?attr/colorPrimaryInverse"
+    android:background="#ededed"
     tools:context=".ui.home.HomeFragment">
 
+    <RelativeLayout
+        android:id="@+id/rlOne"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="#10000000">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csTest2"
+            android:fitsSystemWindows="false"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:background="@drawable/hometest"
+                android:id="@+id/te"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:scaleType="centerCrop" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
     <TextView
         android:id="@+id/text_home"
         android:layout_height="wrap_content"
