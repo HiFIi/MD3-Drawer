@@ -82,6 +82,18 @@
 
     <!-- The elevation to use for the navigation bar view -->
     <attr name="elevation"/>
+    
+     <attr name="colorCustom1" format="color" />
+   <attr name="colorOnCustom1" format="color" />
+   <attr name="colorCustom1Container" format="color" />
+   <attr name="colorOnCustom1Container" format="color" />
+   <attr name="harmonizeCustom1" format="boolean" />
+
+   <attr name="colorCustom2" format="color" />
+   <attr name="colorOnCustom2" format="color" />
+   <attr name="colorCustom2Container" format="color" />
+   <attr name="colorOnCustom2Container" format="color" />
+   <attr name="harmonizeCustom2" format="boolean" />
   </declare-styleable>
 
   <declare-styleable name="NavigationBarActiveIndicator">

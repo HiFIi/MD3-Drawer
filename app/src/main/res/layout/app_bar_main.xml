@@ -8,19 +8,19 @@
     android:layout_width="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="240.0dip"
-        android:background="@android:color/white">
-        <ImageView
-            android:background="@drawable/hometest"
-            android:id="@+id/te"
-            android:layout_height="240dp"
-            android:layout_width="fill_parent"
-            android:scaleType="centerInside" />
-    </RelativeLayout>
+    <include
+        layout="@layout/content_main" />
 
-    <com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_gravity="bottom|end"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dip"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+        
+        <com.google.android.material.appbar.AppBarLayout
         android:fitsSystemWindows="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -37,20 +37,6 @@
             android:background="#00000000"
             app:popupTheme="@style/Theme.Drawertest.PopupOverlay" />
 
-
     </com.google.android.material.appbar.AppBarLayout>
-
-    <include
-        layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_gravity="bottom|end"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dip"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_width="wrap_content"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

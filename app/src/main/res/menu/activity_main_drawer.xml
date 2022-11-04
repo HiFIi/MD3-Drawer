@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/beforeDividerItems"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
@@ -18,19 +19,12 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
     </group>
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/afterDividerItems"
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_homee"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_galleryy"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshoww"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_home222"
+            android:icon="@drawable/quantum_gm_ic_settings_black_24"
+            android:title="test" />
     </group>
 
 </menu>

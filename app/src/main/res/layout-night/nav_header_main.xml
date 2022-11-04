@@ -20,8 +20,8 @@
             android:text="MD3"
             android:paddingTop="24.0dip"
             android:textColor="#85fafafa"
-            android:textSize="26.0sp"
-            app:fontName="lyftproui_bold.otf" />
+            android:textSize="36.0sp"
+            app:fontName="BungeeShade-Regular.ttf" />
 
     </RelativeLayout>
 

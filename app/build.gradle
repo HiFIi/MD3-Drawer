@@ -5,7 +5,7 @@ plugins {
 android {
     namespace 'io.hifii.drawertest'
     compileSdk 33
-
+    
     defaultConfig {
         applicationId "io.hifii.drawertest"
         minSdk 33
@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+def activity_version = "1.6.1"
     implementation 'androidx.appcompat:appcompat:+'
     implementation 'com.google.android.material:material:+'
     implementation 'androidx.constraintlayout:constraintlayout:+'
@@ -40,6 +41,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:+'
     implementation 'androidx.navigation:navigation-ui:+'
     testImplementation 'junit:junit:+'
+    implementation "androidx.activity:activity:$activity_version"
     androidTestImplementation 'androidx.test.ext:junit:+'
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
  }

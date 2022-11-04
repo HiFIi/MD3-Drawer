@@ -2,6 +2,8 @@ package io.hifii.drawertest;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import androidx.appcompat.app.*;
+import androidx.activity.*;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -21,6 +23,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.transition.Fade;
+import androidx.transition.Transition;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.shape.MaterialShapeDrawable;
@@ -50,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     // make the status bar transparent
 
-  //   getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-     
+    //   getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
     setSupportActionBar(binding.appBarMain.toolbar);
     binding.appBarMain.fab.setOnClickListener(
         new View.OnClickListener() {
@@ -68,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     // iv = (ImageView) findViewById(R.id.te);
     final ImageView iv = (ImageView) findViewById(R.id.te);
 
-    ValueAnimator valueAnimator = ValueAnimator.ofFloat(1f, 1.65f);
+    ValueAnimator valueAnimator = ValueAnimator.ofFloat(1.1f, 1.65f);
     valueAnimator.setDuration(5000);
     valueAnimator.addUpdateListener(
         new ValueAnimator.AnimatorUpdateListener() {
@@ -83,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
     valueAnimator.start();
     valueAnimator.start();
 
+    Transition fade = new Fade();
+    fade.excludeTarget(android.R.id.statusBarBackground, true);
+    fade.excludeTarget(android.R.id.navigationBarBackground, true);
+    getWindow().setExitTransition(null);
+    getWindow().setEnterTransition(null);
+
+    // DynamicColors.applyToActivitiesIfAvailable(this);
     MaterialShapeDrawable navViewBackground =
         (MaterialShapeDrawable) navigationView2.getBackground();
     navViewBackground.setShapeAppearanceModel(
