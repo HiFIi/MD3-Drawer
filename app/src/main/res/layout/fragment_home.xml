@@ -6,7 +6,6 @@
     android:fitsSystemWindows="false"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="?@attr/colorOnSecondary"
     tools:context=".ui.home.HomeFragment">
 
     <TextView

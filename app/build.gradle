@@ -4,22 +4,29 @@ plugins {
 
 android {
     namespace 'io.hifii.drawertest'
-    compileSdk 33
+    compileSdkPreview 'UpsideDownCake'
 
     defaultConfig {
         applicationId "io.hifii.drawertest"
-        minSdk 33
-        targetSdk 33
+        minSdk 30
+        targetSdkVersion defaultTargetSdkVersion
         versionCode 1
         versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -29,16 +36,16 @@ android {
     buildFeatures {
         viewBinding true
     }
+    buildToolsVersion '34.0.0 rc2'
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:+'
     implementation 'com.google.android.material:material:+'
     implementation 'androidx.constraintlayout:constraintlayout:+'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:+'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:+'
     implementation 'androidx.navigation:navigation-fragment:+'
     implementation 'androidx.navigation:navigation-ui:+'
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     testImplementation 'junit:junit:+'
     androidTestImplementation 'androidx.test.ext:junit:+'
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
