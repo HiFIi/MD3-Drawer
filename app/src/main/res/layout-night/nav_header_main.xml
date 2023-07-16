@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
-    android:layout_height="150dp"
     android:layout_width="match_parent"
+    android:layout_height="150dp"
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <io.hifii.drawertest.MLandTextView
-            android:gravity="center"
             android:id="@+id/title"
-            android:layout_centerInParent="true"
-            android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="MD3"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
             android:paddingTop="24.0dip"
+            android:text="MD3"
             android:textColor="#85fafafa"
             android:textSize="26.0sp"
             app:fontName="lyftproui_bold.otf" />

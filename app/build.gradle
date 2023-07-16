@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'io.hifii.drawertest'
-    compileSdkPreview 'UpsideDownCake'
+    compileSdk 34
 
     defaultConfig {
         applicationId "io.hifii.drawertest"
@@ -36,7 +36,7 @@ android {
     buildFeatures {
         viewBinding true
     }
-    buildToolsVersion '34.0.0 rc2'
+    buildToolsVersion '34.0.0'
 }
 
 dependencies {
@@ -49,4 +49,4 @@ dependencies {
     testImplementation 'junit:junit:+'
     androidTestImplementation 'androidx.test.ext:junit:+'
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
- }
+}
