@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.activity.*;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.*;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -22,11 +20,10 @@ import io.hifii.drawertest.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
-    ConstraintLayout cs;
-
-    public int l = 0;
     private static final int addL = 350;
+    public int l = 0;
+    ConstraintLayout cs;
+    private FragmentHomeBinding binding;
 
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

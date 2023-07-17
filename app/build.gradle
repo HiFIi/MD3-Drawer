@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'io.hifii.drawertest'
-    compileSdk 33
-    
+    compileSdk 34
+
     defaultConfig {
         applicationId "io.hifii.drawertest"
-        minSdk 33
-        targetSdk 33
+        minSdk 31
+        targetSdk 34
         versionCode 1
         versionName "0.0.1"
 
@@ -29,10 +29,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+    buildToolsVersion '34.0.0'
 }
 
 dependencies {
-def activity_version = "1.6.1"
+    def activity_version = "1.6.1"
     implementation 'androidx.appcompat:appcompat:+'
     implementation 'com.google.android.material:material:+'
     implementation 'androidx.constraintlayout:constraintlayout:+'
@@ -44,4 +45,4 @@ def activity_version = "1.6.1"
     implementation "androidx.activity:activity:$activity_version"
     androidTestImplementation 'androidx.test.ext:junit:+'
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
- }
+}

@@ -1,20 +1,11 @@
 package io.hifii.drawertest;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.app.Application;
-import android.graphics.Color;
-import android.content.Context;
 import android.os.Bundle;
-import android.text.style.BackgroundColorSpan;
-import android.transition.Fade;
-import android.transition.Transition;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.view.WindowManager;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,25 +14,33 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import com.google.android.material.color.DynamicColors;
-import com.google.android.material.color.DynamicColorsOptions;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.snackbar.Snackbar;
+
 import io.hifii.drawertest.databinding.ActivityMainBinding;
-import io.hifii.drawertest.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int ll = 500;
+    public ImageView iv;
+    public NavigationView nv;
+    public DrawerLayout drawer;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    public ImageView iv;
 
-    public static final int ll = 500;
+    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
-    public NavigationView nv;
-
-    public DrawerLayout drawer;
+        Window win = activity.getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,18 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-    }
-
-    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
-
-        Window win = activity.getWindow();
-        WindowManager.LayoutParams winParams = win.getAttributes();
-        if (on) {
-            winParams.flags |= bits;
-        } else {
-            winParams.flags &= ~bits;
-        }
-        win.setAttributes(winParams);
     }
 
     @Override
