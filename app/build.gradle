@@ -2,9 +2,13 @@ plugins {
     id 'com.android.application'
 }
 
+static def getDate() {
+    new Date().format('MM-dd-yyyy-HHmm')
+}
+
 android {
     namespace 'io.hifii.drawertest'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "io.hifii.drawertest"
@@ -17,17 +21,88 @@ android {
     }
 
     buildTypes {
+        android.applicationVariants.configureEach { variant ->
+            variant.outputs.all {
+                outputFileName = "MD3-Drawer-${getDate()}.apk"
+            }
+        }
         release {
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField("String", "BUILD_TIME", "\"0\"")
+            resValue("string", "build_time", "0")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'gson.pro'
+        }
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            debuggable true
+            buildConfigField("String", "BUILD_TIME", "\"0\"")
+            resValue("string", "build_time", "0")
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        // encoding "UTF-8"
+        encoding 'utf-8'
+        incremental true
+        coreLibraryDesugaringEnabled true
     }
     buildFeatures {
-        viewBinding true
+        buildConfig = true
+        viewBinding = true
+        dataBinding = true
+        resValues = true
+
+        // Disable some unused things
+        compose = false
+        aidl = false
+        renderScript = false
+        shaders = false
+    }
+    androidResources {
+        lintOptions {
+            // Turns on checks for the issue IDs you specify. These checks are in
+            // addition to the default lint checks.
+            enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+
+            // To enable checks for only a subset of issue IDs and ignore all others,
+            // list the issue IDs with the 'check' property instead. This property overrides
+            // any issue IDs you enable or disable using the properties above.
+            checkOnly 'NewApi', 'InlinedApi'
+
+            // suppress false warning ("Resource IDs will be non-final in Android Gradle Plugin version
+            // 5.0, avoid using them in switch case statements"), which affects only library projects
+            disable 'NonConstantResourceId'
+
+            disable 'MissingDefaultResource'
+
+            // Disable lint check for missing default resource
+            disable 'MissingDefaultResource'
+
+            ignore "ObsoleteSdk", "UnusedImports"
+
+            // Turns off checks for the issue IDs you specify.
+            disable 'TypographyFractions', 'TypographyQuotes'
+
+            // Kotlin related check that might be annoying
+            disable "CheckResult"
+
+            // If you're using localization libraries
+            disable "SetTextI18n"
+
+            // If set to true, turns off analysis progress reporting by lint.
+            quiet true
+
+            // if set to true (default), stops the build if errors are found.
+            abortOnError false
+
+            // if true, only report errors.
+            ignoreWarnings true
+
+            checkReleaseBuilds false
+        }
     }
 }
 
@@ -44,4 +119,5 @@ dependencies {
     implementation "androidx.activity:activity:$activity_version"
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
 }
