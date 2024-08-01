@@ -1,21 +1,53 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-keep class io.hifii.wiki.ui.model.** { *; }
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+-optimizationpasses 5
+# Firebase Authentication
+-keep class com.google.firebase.auth.** { *; }
+-dontwarn com.google.firebase.auth.**
+# Google Sign-In
+-keep class com.google.android.gms.auth.api.signin.** { *; }
+-dontwarn com.google.android.gms.auth.api.signin.**
+-keep class com.google.android.gms.common.api.** { *; }
+-dontwarn com.google.android.gms.common.api.**
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+-dontwarn com.bumptech.glide.**
+# Firebase Analytics
+-keep class com.google.firebase.analytics.** { *; }
+-dontwarn com.google.firebase.analytics.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Firebase Common
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Firebase Firestore
+-keep class com.google.firebase.firestore.** { *; }
+-dontwarn com.google.firebase.firestore.**
+
+# Firebase Remote Config
+-keep class com.google.firebase.remoteconfig.** { *; }
+-dontwarn com.google.firebase.remoteconfig.**
+
+# General Firebase
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
+
+# Prevent stripping of Firebase components
+-keepattributes Signature
+-keepattributes *Annotation*
+
+-keep class com.google.** { *; }
+-dontwarn com.google.**
+
+-keep class androidx.multidex.** { *; }
+-dontwarn androidx.multidex.**
+
+-keepclassmembers class androidx.viewpager.widget.ViewPager {
+    void setAdapter(androidx.viewpager.widget.PagerAdapter);
+}
+
+-keep class androidx.viewpager.widget.ViewPager {
+    *;
+}
+
+-keep class androidx.work.** { *; }
+-dontwarn androidx.work.**
